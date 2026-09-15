@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Total Coverage Trucking, LLC : Website Proposal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root{
+    --navy:#0b2545;
+    --navy-soft:#13315c;
+    --orange:#f26522;
+    --ink:#1a2333;
+    --muted:#5b6575;
+    --line:#e4e8ef;
+    --bg-soft:#f6f8fb;
+    --bg-tint:#fdf3ee;
+  }
+  html,body{ background:#fff; color:var(--ink); font-family:'Inter',-apple-system,sans-serif; }
+  .page{
+    width:8.5in; height:11in; overflow:hidden; position:relative;
+    padding:0.62in 0.7in 0.78in 0.7in;
+    page-break-after:always; background:#fff;
+    display:flex; flex-direction:column;
+  }
+  .page:last-child{ page-break-after:auto; }
+  @page{ size:letter; margin:0; }
+
+  h1,h2,h3,h4{ font-family:'Bricolage Grotesque','Inter',sans-serif; color:var(--navy); }
+  p{ font-size:10.6px; line-height:1.62; color:var(--ink); }
+  .muted{ color:var(--muted); }
+
+  /* ---------- running header / footer ---------- */
+  .runhead{ display:flex; justify-content:space-between; align-items:center; margin-bottom:22px; }
+  .runhead .mark{ display:flex; align-items:center; gap:8px; }
+  .logochip{
+    width:26px; height:26px; border-radius:7px; background:var(--navy);
+    display:flex; align-items:center; justify-content:center;
+    color:#fff; font-family:'Bricolage Grotesque'; font-weight:800; font-size:10px; letter-spacing:0.5px;
+  }
+  .runhead .name{ font-size:9.5px; font-weight:700; color:var(--navy); letter-spacing:0.04em; }
+  .runhead .sec{ font-size:8.5px; color:var(--muted); letter-spacing:0.14em; text-transform:uppercase; font-weight:600; }
+  .foot{
+    position:absolute; left:0.7in; right:0.7in; bottom:0.34in;
+    display:flex; justify-content:space-between; align-items:center;
+    border-top:1px solid var(--line); padding-top:8px;
+  }
+  .foot span{ font-size:7.8px; color:var(--muted); letter-spacing:0.02em; }
+  .foot .pg{ font-weight:700; color:var(--navy); }
+
+  /* ---------- shared blocks ---------- */
+  .kicker{ font-size:9px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--orange); margin-bottom:8px; }
+  .title{ font-size:30px; font-weight:800; line-height:1.12; letter-spacing:-0.01em; margin-bottom:12px; }
+  .lede{ font-size:11.6px; line-height:1.65; color:var(--muted); max-width:6.4in; }
+
+  .tilegrid{ display:grid; gap:10px; }
+  .tile{
+    border:1px solid var(--line); border-radius:12px; padding:13px 14px; background:#fff;
+  }
+  .tile.soft{ background:var(--bg-soft); border-color:transparent; }
+  .tile.tint{ background:var(--bg-tint); border-color:transparent; }
+  .tile h4{ font-size:11.5px; font-weight:700; margin-bottom:5px; }
+  .tile p{ font-size:9.8px; line-height:1.55; color:var(--muted); }
+  .tile .num{ font-family:'Bricolage Grotesque'; font-size:20px; font-weight:800; color:var(--orange); margin-bottom:4px; }
+
+  table{ width:100%; border-collapse:collapse; }
+  th{ font-family:'Inter'; font-size:8.6px; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); font-weight:700; text-align:left; padding:7px 10px; border-bottom:2px solid var(--navy); }
+  td{ font-size:9.9px; padding:8px 10px; border-bottom:1px solid var(--line); vertical-align:top; line-height:1.5; }
+  td.strong{ font-weight:600; color:var(--navy); }
+
+  .check{ color:#0d8a4f; font-weight:700; }
+  .cross{ color:#c33; font-weight:700; }
+
+  ul.clean{ list-style:none; }
+  ul.clean li{ font-size:10.2px; line-height:1.55; padding-left:18px; position:relative; margin-bottom:6px; color:var(--ink); }
+  ul.clean li::before{ content:""; position:absolute; left:2px; top:7px; width:7px; height:7px; border-radius:2px; background:var(--orange); }
+  ul.clean li b{ color:var(--navy); }
+
+  .sechead{ display:flex; align-items:baseline; gap:10px; margin:16px 0 10px; }
+  .sechead h3{ font-size:15px; font-weight:800; }
+  .sechead .rule{ flex:1; height:1px; background:var(--line); }
+
+  /* ================= PAGE 1 : COVER ================= */
+  .cover{ padding:0; }
+  .cover-top{ background:var(--navy); color:#fff; padding:0.85in 0.75in 0.7in; height:6.6in; display:flex; flex-direction:column; position:relative; overflow:hidden; }
+  .cover-road{ position:absolute; right:-1.2in; top:-1.4in; width:5.4in; height:5.4in; border-radius:50%; border:1.5px dashed rgba(255,255,255,0.14); }
+  .cover-road2{ position:absolute; right:-0.5in; top:-0.7in; width:3.4in; height:3.4in; border-radius:50%; border:1.5px dashed rgba(242,101,34,0.35); }
+  .cover-brand{ display:flex; align-items:center; gap:10px; margin-bottom:auto; }
+  .cover-brand .logochip{ width:34px; height:34px; border-radius:9px; background:#fff; color:var(--navy); font-size:12px; }
+  .cover-brand span{ font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.85); }
+  .cover h1{ color:#fff; font-size:52px; line-height:1.03; font-weight:800; letter-spacing:-0.015em; margin-bottom:20px; }
+  .cover h1 em{ font-style:normal; color:var(--orange); }
+  .cover-lines{ border-left:3px solid var(--orange); padding-left:16px; }
+  .cover-lines p{ color:rgba(255,255,255,0.88); font-size:12.5px; line-height:1.75; }
+  .cover-bottom{ padding:0.5in 0.75in; }
+  .cover-meta{ display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:14px; }
+  .cover-meta .cm label{ display:block; font-size:8.4px; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); font-weight:700; margin-bottom:5px; }
+  .cover-meta .cm div{ font-size:11px; font-weight:600; color:var(--navy); line-height:1.45; }
+
+  /* letter page */
+  .sig{ margin-top:16px; }
+  .sig .name{ font-family:'Bricolage Grotesque'; font-size:15px; font-weight:700; color:var(--navy); }
+  .sig .role{ font-size:9.5px; color:var(--muted); }
+
+  /* package pricing band */
+  .priceband{ display:flex; align-items:center; justify-content:space-between; background:var(--navy); border-radius:14px; padding:16px 20px; color:#fff; }
+  .priceband .pname{ font-family:'Bricolage Grotesque'; font-size:16px; font-weight:800; }
+  .priceband .psub{ font-size:9.5px; color:rgba(255,255,255,0.75); margin-top:3px; }
+  .priceband .price{ font-family:'Bricolage Grotesque'; font-size:34px; font-weight:800; color:var(--orange); }
+  .priceband .price small{ font-size:11px; color:rgba(255,255,255,0.7); font-weight:600; }
+
+  .badge{ display:inline-block; font-size:8.2px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:3px 9px; border-radius:20px; background:var(--bg-tint); color:var(--orange); }
+  .badge.navy{ background:#e8eef7; color:var(--navy); }
+
+  /* sign-off */
+  .signbox{ border:1.5px solid var(--navy); border-radius:14px; padding:18px 20px; }
+  .checkline{ display:flex; align-items:center; gap:10px; margin-bottom:10px; }
+  .cbox{ width:15px; height:15px; border:1.8px solid var(--navy); border-radius:4px; flex-shrink:0; }
+  .checkline span{ font-size:10.5px; font-weight:600; color:var(--navy); }
+  .sigrow{ display:grid; grid-template-columns:1fr 1fr; gap:26px; margin-top:18px; }
+  .sigslot .line{ border-bottom:1.5px solid var(--ink); height:26px; }
+  .sigslot label{ font-size:8.6px; color:var(--muted); letter-spacing:0.08em; text-transform:uppercase; font-weight:600; }
+
+  .ctabox{ background:var(--bg-tint); border-radius:14px; padding:16px 20px; }
+</style>
+</head>
+<body>
+
+<!-- ============ PAGE 1 : COVER ============ -->
+<div class="page cover">
+  <div class="cover-top">
+    <div class="cover-road"></div>
+    <div class="cover-road2"></div>
+    <div class="cover-brand">
+      <div class="logochip">TC</div>
+      <span>Total Coverage Trucking, LLC</span>
+    </div>
+    <h1>Website<br>Project<br><em>Proposal</em></h1>
+    <div class="cover-lines">
+      <p>A website built to win drivers and carriers</p>
+      <p>Same day transport, everywhere in Florida</p>
+      <p>Built for the road from 1 truck to 10</p>
+      <p>Two clear packages, one clear goal</p>
+    </div>
+  </div>
+  <div class="cover-bottom">
+    <div class="cover-meta">
+      <div class="cm"><label>Prepared for</label><div>Total Coverage Trucking, LLC<br><span class="muted" style="font-weight:500">Florida, USA</span></div></div>
+      <div class="cm"><label>Prepared by</label><div>Yasir Bashir<br><span class="muted" style="font-weight:500">yasirbashir.com</span></div></div>
+      <div class="cm"><label>Date</label><div>August 10, 2026</div></div>
+      <div class="cm"><label>Validity</label><div>30 days from date</div></div>
+    </div>
+  </div>
+  <div class="foot">
+    <span>Confidential. Prepared for Total Coverage Trucking, LLC</span>
+    <span>Design partner: Yasir Bashir · yasirbashir.com</span>
+  </div>
+</div>
+
+<!-- ============ PAGE 2 : LETTER + OVERVIEW ============ -->
+<div class="page">
+  <div class="runhead">
+    <div class="mark"><div class="logochip">TC</div><div class="name">Total Coverage Trucking, LLC</div></div>
+    <div class="sec">01 · Overview</div>
+  </div>
+
+  <div class="kicker">A personal note</div>
+  <div class="title">What I will build for<br>Total Coverage Trucking</div>
+
+  <p style="margin-bottom:11px">You are a startup trucking company in Florida with a clear plan: grow to <b>10 trucks in 24 months</b>, own the local niche of <b>same day transport within Florida</b>, and use your website to make <b>drivers and carriers want to sign up with you</b>.</p>
+
+  <p style="margin-bottom:11px">That last part is the key. Most small trucking websites are built for shippers only. Yours needs to work twice as hard: it has to win freight, and it has to win people. A driver deciding between two companies will check both websites. The company that looks organized, professional and easy to join usually gets the driver. That is the website I am proposing here.</p>
+
+  <p style="margin-bottom:16px">You mentioned Knight Transportation's website as your inspiration. That is a smart benchmark, and I studied it page by page for this proposal. On page 4 you will see exactly what Knight does well, where their site falls short, and how your site will beat it in the ways that matter for a local Florida company.</p>
+
+  <div class="sechead"><h3>What this proposal covers</h3><div class="rule"></div></div>
+  <div class="tilegrid" style="grid-template-columns:1fr 1fr; margin-bottom:16px">
+    <div class="tile soft"><h4>Your goals, understood</h4><p>Your growth plan, your niche and your audience, written back to you so we both know we are building the same thing.</p></div>
+    <div class="tile soft"><h4>The Knight Transportation review</h4><p>A real evaluation of your inspiration site, and the specific ways Total Coverage Trucking will do better.</p></div>
+    <div class="tile soft"><h4>Two clear packages</h4><p>A Basic Starter Website at $450 and a Full Package at $730, each with exactly what is included and what is not.</p></div>
+    <div class="tile soft"><h4>Timeline, terms and sign off</h4><p>A week by week plan, simple payment terms, and a signature page so we can start right away.</p></div>
+  </div>
+
+  <div class="tile tint">
+    <h4>My recommendation, up front</h4>
+    <p style="font-size:10.2px; color:var(--ink)">Go with the <b>Full Package at $730</b>. The online driver application and the carrier and shipper signup forms are the exact features that serve your number one goal, getting drivers and carriers to sign up. The basic site looks good, but the full site works for you every day. The full comparison is on page 8.</p>
+  </div>
+
+  <div class="sig">
+    <div class="name">Yasir Bashir</div>
+    <div class="role">Web design and development · yasirbashir.com</div>
+  </div>
+
+  <div class="foot">
+    <span>Confidential. Prepared for Total Coverage Trucking, LLC</span>
+    <span class="pg">02</span>
+  </div>
+</div>
+
+<!-- ============ PAGE 3 : WHY THIS MATTERS NOW ============ -->
+<div class="page">
+  <div class="runhead">
+    <div class="mark"><div class="logochip">TC</div><div class="name">Total Coverage Trucking, LLC</div></div>
+    <div class="sec">02 · Why this matters now</div>
+  </div>
+
+  <div class="kicker">The opportunity</div>
+  <div class="title">Why the website matters<br>for a 10 truck plan</div>
+
+  <p style="margin-bottom:14px">Scaling from a startup to 10 trucks in 24 months means solving three problems over and over: finding freight, finding drivers, and looking credible enough that both say yes. Your website is the one tool that works on all three at once, around the clock.</p>
+
+  <div class="tilegrid" style="grid-template-columns:1fr 1fr 1fr; margin-bottom:16px">
+    <div class="tile soft"><div class="num">24/7</div><h4>Your best recruiter never sleeps</h4><p>Drivers search and compare companies at night, after shifts. An online application means you capture them the moment they are interested.</p></div>
+    <div class="tile soft"><div class="num">1st</div><h4>First impressions decide</h4><p>Shippers and brokers check your website before they call. A clean, professional site is the difference between a callback and silence.</p></div>
+    <div class="tile soft"><div class="num">FL</div><h4>The local niche is winnable</h4><p>Same day transport within Florida is a focused promise. Most local competitors have weak or outdated websites. That is your opening.</p></div>
+  </div>
+
+  <div class="sechead"><h3>What your website has to do</h3><div class="rule"></div></div>
+  <table style="margin-bottom:16px">
+    <tr><th style="width:24%">Audience</th><th style="width:38%">What they need to see</th><th>What the site gives them</th></tr>
+    <tr><td class="strong">Drivers</td><td>A company worth joining: real trucks, clear pay story, easy application</td><td>A dedicated drivers page and a simple online application they can finish from a phone</td></tr>
+    <tr><td class="strong">Carriers</td><td>A partner that is organized and pays attention</td><td>A carrier signup form that makes joining your network a five minute task</td></tr>
+    <tr><td class="strong">Shippers &amp; brokers</td><td>Proof you can cover Florida, same day, reliably</td><td>Clear services, coverage area, and a quote request that gets answered fast</td></tr>
+  </table>
+
+  <div class="tile tint">
+    <h4>The startup advantage</h4>
+    <p style="font-size:10.2px; color:var(--ink)">Big carriers have big websites, but they cannot promise what you can: same day, local, and the owner picks up the phone. The site we build will say that loudly on every page. Small and fast is your brand, not your weakness.</p>
+  </div>
+
+  <div class="foot">
+    <span>Confidential. Prepared for Total Coverage Trucking, LLC</span>
+    <span class="pg">03</span>
+  </div>
+</div>
+
+<!-- ============ PAGE 4 : KNIGHT EVALUATION ============ -->
+<div class="page">
+  <div class="runhead">
+    <div class="mark"><div class="logochip">TC</div><div class="name">Total Coverage Trucking, LLC</div></div>
+    <div class="sec">03 · The benchmark</div>
+  </div>
+
+  <div class="kicker">Website evaluation · knighttrans.com</div>
+  <div class="title">What Knight gets right,<br>and where you will beat them</div>
+
+  <p style="margin-bottom:12px">Knight Transportation runs one of the largest truckload fleets in North America, over 3,100 tractors and 24 terminals. I reviewed their website in detail. Here is what is worth copying, and what is worth doing better.</p>
+
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:14px">
+    <div class="tile soft">
+      <span class="badge navy">Worth copying</span>
+      <ul class="clean" style="margin-top:9px">
+        <li><b>Two front doors.</b> Clear separate paths for drivers ("Drive With Knight") and shippers ("Ship With Knight").</li>
+        <li><b>Application near the top.</b> The driver application sits high on the homepage, not buried in a menu.</li>
+        <li><b>Numbers as proof.</b> Fleet size, terminal count and equipment age build instant trust.</li>
+        <li><b>Clean, modern look.</b> White space, real photography, simple icons, card layouts.</li>
+      </ul>
+    </div>
+    <div class="tile tint">
+      <span class="badge">Where it falls short</span>
+      <ul class="clean" style="margin-top:9px">
+        <li><b>No human proof.</b> No driver quotes, no customer testimonials, only statistics.</li>
+        <li><b>Application friction.</b> Applying sends drivers to an external system with extra steps.</li>
+        <li><b>No quick answers.</b> No FAQ and no fast contact route for a driver with one simple question.</li>
+        <li><b>Built for a giant.</b> Generic national messaging, nothing local, nothing personal.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sechead"><h3>How Total Coverage Trucking will excel</h3><div class="rule"></div></div>
+  <table>
+    <tr><th style="width:34%">Knight Transportation</th><th>Your site will do better</th></tr>
+    <tr><td>National and generic, speaks to everyone</td><td class="strong">Local and specific: same day, anywhere in Florida, on every page</td></tr>
+    <tr><td>Driver application on an external system</td><td class="strong">Driver application built into your own site, phone friendly, done in minutes</td></tr>
+    <tr><td>Stats only, no faces or voices</td><td class="strong">A personal startup story: real people, real trucks, testimonials as you grow</td></tr>
+    <tr><td>No FAQ, slow paths to answers</td><td class="strong">Driver FAQ plus a tap to call button on every page</td></tr>
+    <tr><td>Corporate distance, layers between people</td><td class="strong">Direct access: drivers and carriers reach the owner, and the site says so</td></tr>
+  </table>
+
+  <p class="muted" style="margin-top:12px; font-size:9.6px">In short: we borrow Knight's structure and polish, then win on speed, locality and the personal touch that a national fleet cannot offer.</p>
+
+  <div class="foot">
+    <span>Confidential. Prepared for Total Coverage Trucking, LLC</span>
+    <span class="pg">04</span>
+  </div>
+</div>
+
+<!-- ============ PAGE 5 : UNDERSTANDING + SITE PLAN ============ -->
+<div class="page">
+  <div class="runhead">
+    <div class="mark"><div class="logochip">TC</div><div class="name">Total Coverage Trucking, LLC</div></div>
+    <div class="sec">04 · Requirements &amp; site plan</div>
+  </div>
+
+  <div class="kicker">Understanding your requirements</div>
+  <div class="title">What you asked for,<br>and the site plan to match</div>
+
+  <div class="tilegrid" style="grid-template-columns:1fr 1fr; margin-bottom:14px">
+    <div class="tile soft"><h4>Your brief</h4>
+      <ul class="clean" style="margin-top:6px">
+        <li>Startup trucking company, local to Florida</li>
+        <li>Goal: scale to 10 trucks within 24 months</li>
+        <li>Niche: same day transport within Florida</li>
+        <li>Website must attract drivers and carriers and encourage them to sign up</li>
+        <li>Inspired by knighttrans.com, adapted to your scale</li>
+      </ul>
+    </div>
+    <div class="tile soft"><h4>How the site answers it</h4>
+      <ul class="clean" style="margin-top:6px">
+        <li>Same day Florida promise front and center on the homepage</li>
+        <li>Dedicated pages for drivers and for carriers, not just shippers</li>
+        <li>Sign up actions on every page, never more than one tap away</li>
+        <li>Knight style structure and polish, startup personality</li>
+        <li>Built to grow: pages and features can be added as the fleet grows</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sechead"><h3>Proposed site map</h3><div class="rule"></div></div>
+  <table style="margin-bottom:14px">
+    <tr><th style="width:22%">Page</th><th>What it does</th><th style="width:14%">Basic</th><th style="width:14%">Full</th></tr>
+    <tr><td class="strong">Home</td><td>The same day Florida promise, services at a glance, driver and carrier calls to action</td><td class="check">✓</td><td class="check">✓</td></tr>
+    <tr><td class="strong">Services</td><td>Same day transport, coverage across Florida, how a load moves with you</td><td class="check">✓</td><td class="check">✓</td></tr>
+    <tr><td class="strong">Drivers</td><td>Why drive for Total Coverage: pay story, equipment, home time, FAQ</td><td class="check">✓</td><td class="check">✓</td></tr>
+    <tr><td class="strong">About</td><td>Your story, your standards, the 10 truck vision</td><td class="check">✓</td><td class="check">✓</td></tr>
+    <tr><td class="strong">Contact</td><td>Tap to call, email, service area, simple contact form</td><td class="check">✓</td><td class="check">✓</td></tr>
+    <tr><td class="strong">Driver application</td><td>Full online application drivers complete from a phone</td><td class="cross">✗</td><td class="check">✓</td></tr>
+    <tr><td class="strong">Carrier signup</td><td>Carrier onboarding form to join your network</td><td class="cross">✗</td><td class="check">✓</td></tr>
+    <tr><td class="strong">Shipper signup / quote</td><td>Shippers request same day quotes and sign up online</td><td class="cross">✗</td><td class="check">✓</td></tr>
+  </table>
+
+  <div class="tile tint">
+    <h4>Every page, both audiences</h4>
+    <p style="font-size:10.2px; color:var(--ink)">Like Knight, the site keeps two doors open at all times: a driver route and a freight route. Unlike Knight, both routes finish on your own site, in your inbox, the same day.</p>
+  </div>
+
+  <div class="foot">
+    <span>Confidential. Prepared for Total Coverage Trucking, LLC</span>
+    <span class="pg">05</span>
+  </div>
+</div>
+
+<!-- ============ PAGE 6 : PACKAGE A ============ -->
+<div class="page">
+  <div class="runhead">
+    <div class="mark"><div class="logochip">TC</div><div class="name">Total Coverage Trucking, LLC</div></div>
+    <div class="sec">05 · Package A</div>
+  </div>
+
+  <div class="kicker">Package A</div>
+  <div class="title">Basic Starter Website</div>
+
+  <div class="priceband" style="margin-bottom:16px">
+    <div>
+      <div class="pname">Basic Starter Website</div>
+      <div class="psub">A clean, professional static website that puts you on the map</div>
+    </div>
+    <div class="price">$450 <small>one time</small></div>
+  </div>
+
+  <p style="margin-bottom:14px">The Basic package is a static website: five polished pages that present Total Coverage Trucking professionally, explain your same day Florida service, and give drivers, carriers and shippers a clear way to call or email you. It is the right choice if you want a strong online presence first and plan to add forms later.</p>
+
+  <div class="sechead"><h3>What is included</h3><div class="rule"></div></div>
+  <div class="tilegrid" style="grid-template-columns:1fr 1fr; margin-bottom:14px">
+    <div class="tile soft"><h4>Five static pages</h4><p>Home, Services, Drivers, About and Contact, each custom designed in your branding, no templates.</p></div>
+    <div class="tile soft"><h4>Mobile first design</h4><p>Drivers browse on phones. Every page is designed for phones first, then scaled up to desktop.</p></div>
+    <div class="tile soft"><h4>Tap to call and email links</h4><p>One tap connects a visitor to your phone or inbox from any page on the site.</p></div>
+    <div class="tile soft"><h4>Basic contact form</h4><p>A simple name, phone and message form on the Contact page, delivered to your email.</p></div>
+    <div class="tile soft"><h4>Search engine foundations</h4><p>Proper page titles and descriptions so Florida same day trucking searches can find you.</p></div>
+    <div class="tile soft"><h4>Launch and handover</h4><p>Deployment to your domain, a walkthrough of the finished site, and 30 days of bug fix support.</p></div>
+  </div>
+
+  <div class="sechead"><h3>Not included in this package</h3><div class="rule"></div></div>
+  <ul class="clean">
+    <li><b>Online driver application.</b> Drivers can call or email, but there is no in site application form.</li>
+    <li><b>Carrier and shipper signup forms.</b> These are part of the Full Package only.</li>
+    <li><b>Content management system.</b> Text changes after launch are handled as small update requests.</li>
+    <li><b>Third party costs.</b> Domain and hosting are registered in your name and billed at cost. Typical total is roughly $15 to $60 per year.</li>
+  </ul>
+
+  <div class="foot">
+    <span>Confidential. Prepared for Total Coverage Trucking, LLC</span>
+    <span class="pg">06</span>
+  </div>
+</div>
+
+<!-- ============ PAGE 7 : PACKAGE B ============ -->
+<div class="page">
+  <div class="runhead">
+    <div class="mark"><div class="logochip">TC</div><div class="name">Total Coverage Trucking, LLC</div></div>
+    <div class="sec">06 · Package B</div>
+  </div>
+
+  <div class="kicker">Package B · Recommended</div>
+  <div class="title">Full Package</div>
+
+  <div class="priceband" style="margin-bottom:16px">
+    <div>
+      <div class="pname">Full Package</div>
+      <div class="psub">The complete website plus the forms that recruit drivers and sign up carriers</div>
+    </div>
+    <div class="price">$730 <small>one time</small></div>
+  </div>
+
+  <p style="margin-bottom:14px">The Full Package is everything in the Basic Starter Website plus the three working forms that serve your main goal directly. Instead of asking drivers and carriers to call during business hours, the site signs them up for you, day and night, and delivers every submission straight to your email.</p>
+
+  <div class="sechead"><h3>Everything in Basic, plus</h3><div class="rule"></div></div>
+  <div class="tilegrid" style="grid-template-columns:1fr 1fr 1fr; margin-bottom:14px">
+    <div class="tile tint"><h4>Online driver application</h4><p>A full application form: personal details, CDL and endorsements, experience, availability. Phone friendly, finished in minutes, sent to your inbox instantly.</p></div>
+    <div class="tile tint"><h4>Carrier signup form</h4><p>Carriers join your network online: company details, MC and DOT numbers, equipment and lanes. You review and reply with next steps.</p></div>
+    <div class="tile tint"><h4>Shipper signup and quote form</h4><p>Shippers request same day quotes online: pickup, delivery, freight details and timing, so you can respond while the load is still yours to win.</p></div>
+  </div>
+
+  <div class="tilegrid" style="grid-template-columns:1fr 1fr; margin-bottom:14px">
+    <div class="tile soft"><h4>Email notifications</h4><p>Every application and signup lands in your email the moment it is submitted, formatted and easy to read.</p></div>
+    <div class="tile soft"><h4>Spam protection</h4><p>All forms are protected so your inbox receives real drivers and real freight, not junk.</p></div>
+    <div class="tile soft"><h4>Driver FAQ section</h4><p>Answers to the questions drivers actually ask before applying, reducing hesitation and phone tag.</p></div>
+    <div class="tile soft"><h4>Room to grow</h4><p>The site is structured so job listings, testimonials and new pages can be added as you scale toward 10 trucks.</p></div>
+  </div>
+
+  <div class="tile" style="border-color:var(--orange)">
+    <h4>Why this package fits your goal</h4>
+    <p style="font-size:10.2px; color:var(--ink)">Your brief says it plainly: the website should encourage drivers and carriers to sign up with you. These forms are that encouragement, turned into a working feature. For $280 more than the basic site, the website becomes a recruiter and a sales tool, not just a brochure.</p>
+  </div>
+
+  <div class="foot">
+    <span>Confidential. Prepared for Total Coverage Trucking, LLC</span>
+    <span class="pg">07</span>
+  </div>
+</div>
+
+<!-- ============ PAGE 8 : COMPARISON ============ -->
+<div class="page">
+  <div class="runhead">
+    <div class="mark"><div class="logochip">TC</div><div class="name">Total Coverage Trucking, LLC</div></div>
+    <div class="sec">07 · Choose your package</div>
+  </div>
+
+  <div class="kicker">Side by side</div>
+  <div class="title">Compare the packages</div>
+
+  <table style="margin-bottom:16px">
+    <tr><th style="width:44%">Feature</th><th style="width:28%">Basic Starter · $450</th><th style="width:28%">Full Package · $730</th></tr>
+    <tr><td class="strong">Custom design, your branding</td><td class="check">✓ Included</td><td class="check">✓ Included</td></tr>
+    <tr><td class="strong">Five core pages (Home, Services, Drivers, About, Contact)</td><td class="check">✓ Included</td><td class="check">✓ Included</td></tr>
+    <tr><td class="strong">Mobile first, phone friendly</td><td class="check">✓ Included</td><td class="check">✓ Included</td></tr>
+    <tr><td class="strong">Tap to call and email links</td><td class="check">✓ Included</td><td class="check">✓ Included</td></tr>
+    <tr><td class="strong">Basic contact form</td><td class="check">✓ Included</td><td class="check">✓ Included</td></tr>
+    <tr><td class="strong">Search engine foundations</td><td class="check">✓ Included</td><td class="check">✓ Included</td></tr>
+    <tr><td class="strong">Online driver application</td><td class="cross">✗ Not included</td><td class="check">✓ Included</td></tr>
+    <tr><td class="strong">Carrier signup form</td><td class="cross">✗ Not included</td><td class="check">✓ Included</td></tr>
+    <tr><td class="strong">Shipper signup and quote form</td><td class="cross">✗ Not included</td><td class="check">✓ Included</td></tr>
+    <tr><td class="strong">Email notifications for submissions</td><td class="cross">✗ Not included</td><td class="check">✓ Included</td></tr>
+    <tr><td class="strong">Driver FAQ section</td><td class="cross">✗ Not included</td><td class="check">✓ Included</td></tr>
+    <tr><td class="strong">Bug fix support after launch</td><td>30 days</td><td>30 days</td></tr>
+    <tr><td class="strong">Delivery time</td><td>1 to 2 weeks</td><td>2 to 3 weeks</td></tr>
+  </table>
+
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px">
+    <div class="tile soft">
+      <h4>Choose Basic if</h4>
+      <p style="font-size:10px; color:var(--ink)">You want a professional presence online quickly, your recruiting still happens mostly by phone, and you plan to add the forms in a later phase.</p>
+    </div>
+    <div class="tile tint">
+      <h4>Choose Full if · Recommended</h4>
+      <p style="font-size:10px; color:var(--ink)">You want the website itself to recruit drivers and sign up carriers from day one. This is the package that matches the goal in your brief.</p>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span>Confidential. Prepared for Total Coverage Trucking, LLC</span>
+    <span class="pg">08</span>
+  </div>
+</div>
+
+<!-- ============ PAGE 9 : TIMELINE, TERMS, EXPERIENCE ============ -->
+<div class="page">
+  <div class="runhead">
+    <div class="mark"><div class="logochip">TC</div><div class="name">Total Coverage Trucking, LLC</div></div>
+    <div class="sec">08 · Timeline &amp; terms</div>
+  </div>
+
+  <div class="kicker">The plan</div>
+  <div class="title">Timeline, payment<br>and proven work</div>
+
+  <div class="sechead"><h3>Week by week</h3><div class="rule"></div></div>
+  <table style="margin-bottom:14px">
+    <tr><th style="width:18%">Stage</th><th style="width:52%">What happens</th><th>You will see</th></tr>
+    <tr><td class="strong">Week 1</td><td>Kickoff, content gathering, homepage design first for your approval, then remaining pages</td><td>Homepage preview to review</td></tr>
+    <tr><td class="strong">Week 2</td><td>Full site build, all pages assembled, forms built and tested (Full Package)</td><td>Complete working preview link</td></tr>
+    <tr><td class="strong">Week 3</td><td>Your revision round, final polish, launch on your domain, walkthrough and handover</td><td>Your live website</td></tr>
+  </table>
+  <p class="muted" style="font-size:9.4px; margin-bottom:14px">Basic package typically completes in 1 to 2 weeks. Full Package in 2 to 3 weeks. One structured revision round is included at each preview stage.</p>
+
+  <div class="sechead"><h3>Payment terms</h3><div class="rule"></div></div>
+  <div class="tilegrid" style="grid-template-columns:1fr 1fr; margin-bottom:14px">
+    <div class="tile soft"><div class="num">50%</div><h4>Deposit to start</h4><p>$225 for Basic, $365 for Full. Work begins on receipt.</p></div>
+    <div class="tile soft"><div class="num">50%</div><h4>On delivery</h4><p>Balance due on your approval of the finished site, before final launch handover.</p></div>
+  </div>
+
+  <div class="sechead"><h3>Recent trucking and logistics work</h3><div class="rule"></div></div>
+  <table>
+    <tr><th style="width:32%">Company</th><th style="width:34%">Business</th><th>Scope</th></tr>
+    <tr><td class="strong">Fleet B Logistics</td><td>Trucking, West Palm Beach FL</td><td>Full site with owner operator signup funnel and online onboarding</td></tr>
+    <tr><td class="strong">Mosley Prime Logistics</td><td>Sprinter van carrier, FL and GA</td><td>Full company site with quote and contact forms</td></tr>
+    <tr><td class="strong">Arnold Freight Group</td><td>Freight company</td><td>Company website plus social media brand kit</td></tr>
+    <tr><td class="strong">SFAM Logistics</td><td>businessidentity.llc</td><td>Full logistics platform with client portal and document uploads</td></tr>
+    <tr><td class="strong">MC Logistics</td><td>mclogistics.delivery</td><td>Lead generation site with working capture forms</td></tr>
+  </table>
+  <p class="muted" style="margin-top:10px; font-size:9.4px">Florida trucking is my home niche. You are hiring someone who has built this exact kind of site, for this exact kind of company, multiple times.</p>
+
+  <div class="foot">
+    <span>Confidential. Prepared for Total Coverage Trucking, LLC</span>
+    <span class="pg">09</span>
+  </div>
+</div>
+
+<!-- ============ PAGE 10 : TERMS + SIGN OFF ============ -->
+<div class="page">
+  <div class="runhead">
+    <div class="mark"><div class="logochip">TC</div><div class="name">Total Coverage Trucking, LLC</div></div>
+    <div class="sec">09 · Agreement</div>
+  </div>
+
+  <div class="kicker">Let's get started</div>
+  <div class="title">Terms and sign off</div>
+
+  <div class="sechead"><h3>Terms and conditions</h3><div class="rule"></div></div>
+  <ul class="clean" style="margin-bottom:14px">
+    <li><b>Your responsibilities.</b> Provide company details, logo if available, photos of your trucks when possible, and timely feedback at each preview stage.</li>
+    <li><b>Third party costs.</b> Domain and hosting are registered in your own accounts and billed at cost. You own them fully from day one.</li>
+    <li><b>Ownership.</b> On final payment, the website and all its files belong entirely to Total Coverage Trucking, LLC.</li>
+    <li><b>Scope changes.</b> New pages or features beyond this proposal are quoted separately before any work begins, no surprises.</li>
+    <li><b>Support.</b> 30 days of free bug fixes after launch. An optional care plan for updates and changes is available from $50 per month.</li>
+    <li><b>Validity.</b> The prices in this proposal are valid for 30 days from August 10, 2026.</li>
+  </ul>
+
+  <div class="signbox" style="margin-bottom:14px">
+    <h4 style="font-size:12.5px; margin-bottom:12px">Package selection</h4>
+    <div class="checkline"><div class="cbox"></div><span>Package A · Basic Starter Website · $450</span></div>
+    <div class="checkline"><div class="cbox"></div><span>Package B · Full Package · $730 &nbsp;<span class="badge">Recommended</span></span></div>
+    <div class="sigrow">
+      <div class="sigslot"><div class="line"></div><label>Total Coverage Trucking, LLC · Signature and date</label></div>
+      <div class="sigslot"><div class="line"></div><label>Yasir Bashir · Signature and date</label></div>
+    </div>
+  </div>
+
+  <div class="ctabox">
+    <h4 style="font-size:12.5px; margin-bottom:6px">Next step</h4>
+    <p style="font-size:10.4px; color:var(--ink)">Tick your package, sign above, and send this page back with the 50% deposit. I will schedule the kickoff within 48 hours and your homepage preview follows within the first week. Questions first? Reach me any time at <b>yasirbashir.com</b>.</p>
+  </div>
+
+  <div class="foot">
+    <span>Confidential. Prepared for Total Coverage Trucking, LLC</span>
+    <span>Design partner: Yasir Bashir · yasirbashir.com &nbsp;·&nbsp; <span class="pg">10</span></span>
+  </div>
+</div>
+
+</body>
+</html>
