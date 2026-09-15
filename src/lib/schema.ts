@@ -1,5 +1,5 @@
 import { site } from "@/data/site";
-import type { Service } from "@/data/services";
+import { services, type Service } from "@/data/services";
 
 /** Organization + LocalBusiness (MovingCompany subtype is closest to a carrier in schema.org). */
 export function organizationSchema() {
@@ -19,6 +19,28 @@ export function organizationSchema() {
     address: { "@type": "PostalAddress", addressRegion: site.address.stateCode, addressCountry: "US" },
     openingHoursSpecification: site.hoursSchema.map((h) => ({ "@type": "OpeningHoursSpecification", dayOfWeek: h.days, opens: h.opens, closes: h.closes })),
     sameAs: Object.values(site.social).filter(Boolean),
+    priceRange: "$$",
+    contactPoint: [{ "@type": "ContactPoint", telephone: site.phone, contactType: "sales", areaServed: "US", availableLanguage: "English", hoursAvailable: site.hoursSchema.map((h) => ({ "@type": "OpeningHoursSpecification", dayOfWeek: h.days, opens: h.opens, closes: h.closes })) }],
+    knowsAbout: ["Same-day freight delivery", "Cargo van delivery", "Box truck freight", "Flatbed trucking", "Dedicated contract trucking", "Final-mile distribution"],
+    hasOfferCatalog: { "@type": "OfferCatalog", name: "Trucking services", itemListElement: services.map((s) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name: s.name, url: `${site.url}/${s.slug}/` } })) },
+  };
+}
+
+/** WebSite entity so search engines attach the site name and logo. */
+export function websiteSchema() {
+  return { "@context": "https://schema.org", "@type": "WebSite", "@id": `${site.url}/#website`, url: site.url, name: site.name, publisher: { "@id": `${site.url}/#org` }, inLanguage: "en-US" };
+}
+
+/** City landing page: Service scoped to a city. */
+export function cityServiceSchema(city: string, slug: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: `Trucking and same-day freight in ${city}, FL`,
+    serviceType: "Freight trucking",
+    url: `${site.url}/trucking-${slug}/`,
+    provider: { "@id": `${site.url}/#org` },
+    areaServed: { "@type": "City", name: city, containedInPlace: { "@type": "State", name: "Florida" } },
   };
 }
 

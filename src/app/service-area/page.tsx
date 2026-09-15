@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/data/site";
 import { services } from "@/data/services";
+import { cities } from "@/data/cities";
 import { meta } from "@/lib/seo";
 import { breadcrumbSchema } from "@/lib/schema";
 import { JsonLd } from "@/components/JsonLd";
@@ -41,7 +42,7 @@ export default function ServiceAreaPage() {
             <h2 className="display mt-3 text-4xl text-navy sm:text-5xl">14 metro hubs, 67 counties</h2>
             <p className="mt-4 text-[16px] text-slate">Same-day service applies to any Florida-to-Florida lane booked by 12:00 PM ET. Later bookings are covered whenever a truck is positioned nearby.</p>
             <ul className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-3">
-              {site.floridaMarkets.map((m) => <li key={m} className="flex items-center gap-2 rounded-lg border border-line bg-cloud px-3 py-2 text-[14px] font-semibold text-navy"><Pin className="h-4 w-4 text-orange" />{m}</li>)}
+              {site.floridaMarkets.map((m) => { const c = cities.find((x) => x.name === m); const inner = <><Pin className="h-4 w-4 text-orange" />{m}{c && <Arrow className="ml-auto h-3.5 w-3.5 text-muted" />}</>; return c ? <li key={m}><Link href={`/trucking-${c.slug}/`} className="flex items-center gap-2 rounded-lg border border-line bg-cloud px-3 py-2 text-[14px] font-semibold text-navy transition hover:border-orange hover:text-orange">{inner}</Link></li> : <li key={m} className="flex items-center gap-2 rounded-lg border border-line bg-cloud px-3 py-2 text-[14px] font-semibold text-navy">{inner}</li>; })}
             </ul>
           </div>
         </Container>

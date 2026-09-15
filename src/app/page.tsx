@@ -5,6 +5,7 @@ import { services } from "@/data/services";
 import { reviews } from "@/data/reviews";
 import { faqs } from "@/data/faqs";
 import { posts } from "@/data/blog";
+import { cities } from "@/data/cities";
 import { meta } from "@/lib/seo";
 import { faqSchema } from "@/lib/schema";
 import { JsonLd } from "@/components/JsonLd";
@@ -19,7 +20,7 @@ import { FleetTabs } from "@/components/FleetTabs";
 import { FloridaMap } from "@/components/FloridaMap";
 import { CtaBand } from "@/components/CtaBand";
 import { PhoneLink } from "@/components/PhoneLink";
-import { Arrow, Check, Phone, Shield, Clock, Route, FileText, Truck, X } from "@/components/Icons";
+import { Arrow, Check, Chevron, Phone, Shield, Clock, Route, FileText, Truck, X } from "@/components/Icons";
 
 export const metadata = meta(
   "Total Coverage Trucking | Same-Day Freight & Asset-Based Trucking in Florida",
@@ -79,8 +80,13 @@ export default function Home() {
               {site.trust.map((t) => <li key={t.label} className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 shrink-0 text-orange" /><span><strong className="block text-white">{t.label}</strong><span className="text-white/60">{t.sub}</span></span></li>)}
             </ul>
           </div>
-          <div className="drive-in lg:justify-self-end lg:w-full lg:max-w-md">
-            <QuoteForm compact />
+          <div className="drive-in lg:w-full lg:max-w-md lg:justify-self-end">
+            {/* Phones: collapsed by default so the page stays scannable. Desktop: always open. */}
+            <details className="group lg:hidden">
+              <summary className="btn-navy display-md w-full cursor-pointer border border-white/15 py-4 text-lg group-open:hidden">Quick quote form <Chevron className="h-5 w-5" /></summary>
+              <QuoteForm compact />
+            </details>
+            <div className="hidden lg:block"><QuoteForm compact /></div>
           </div>
         </Container>
         {/* ticker */}
@@ -119,7 +125,7 @@ export default function Home() {
           </ol>
           <div className="reveal mt-12 flex flex-col items-center justify-between gap-4 rounded-2xl border border-line bg-cloud p-6 sm:flex-row">
             <p className="text-[15px] text-slate"><strong className="text-navy">Booking by noon ET?</strong> Most Florida lanes deliver before close of business the same day.</p>
-            <Link href="/get-a-quote/" className="btn-orange px-6 py-3">Start a quote <Arrow className="h-4 w-4" /></Link>
+            <Link href="/get-a-quote/" className="btn-orange whitespace-nowrap px-6 py-3">Start a quote <Arrow className="h-4 w-4" /></Link>
           </div>
         </Container>
       </section>
@@ -149,7 +155,7 @@ export default function Home() {
               ))}
             </dl>
             <div className="mt-8 flex flex-wrap gap-2">
-              {site.floridaMarkets.map((m) => <Link key={m} href="/service-area/" className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[13px] text-white/80 transition hover:border-orange hover:text-white">{m}</Link>)}
+              {site.floridaMarkets.map((m) => { const c = cities.find((x) => x.name === m); return <Link key={m} href={c ? `/trucking-${c.slug}/` : "/service-area/"} className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[13px] text-white/80 transition hover:border-orange hover:text-white">{m}</Link>; })}
             </div>
             <Link href="/service-area/" className="mt-8 inline-flex items-center gap-2 font-semibold text-orange-300 hover:text-white">Full service area <Arrow className="h-4 w-4" /></Link>
           </div>

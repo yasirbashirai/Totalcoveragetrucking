@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { site } from "@/data/site";
 import { services } from "@/data/services";
+import { cities } from "@/data/cities";
 import { Facebook, Instagram, LinkedIn, Mail, Phone, Clock, Pin } from "./Icons";
 import { PhoneLink } from "./PhoneLink";
 
@@ -11,7 +12,7 @@ export function Footer() {
     <footer className="bg-navy-900 text-white/80">
       <div className="stripe h-2 opacity-90" aria-hidden="true" />
       <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.3fr_1fr_0.9fr_0.9fr_1.1fr]">
           <div>
             <Link href="/" className="inline-block rounded-xl bg-white p-3"><span className="relative block h-16 w-[140px]"><Image src="/images/logo.webp" alt={`${site.name} logo`} fill sizes="140px" className="object-contain" /></span></Link>
             <p className="mt-4 max-w-sm text-[14px] leading-relaxed">{site.legalName} is an asset-based trucking company moving product across Florida and the Southeast. Same-day freight, cargo van, box truck and flatbed, with our own trucks and CDL drivers.</p>
@@ -31,6 +32,12 @@ export function Footer() {
             <h3 className="display-md mb-4 text-base text-white">Company</h3>
             <ul className="space-y-2 text-[14px]">
               {[["/about-us/", "About Us"], ["/service-area/", "Service Area"], ["/careers/", "Careers & Driver Jobs"], ["/reviews/", "Reviews"], ["/blog/", "Blog"], ["/faq/", "FAQ"], ["/contact/", "Contact"], ["/get-a-quote/", "Get a Quote"]].map(([h, l]) => <li key={h}><Link href={h} className="hover:text-orange-300">{l}</Link></li>)}
+            </ul>
+          </div>
+          <div>
+            <h3 className="display-md mb-4 text-base text-white">Florida Cities</h3>
+            <ul className="space-y-2 text-[14px]">
+              {cities.map((c) => <li key={c.slug}><Link href={`/trucking-${c.slug}/`} className="hover:text-orange-300">{c.name} Trucking</Link></li>)}
             </ul>
           </div>
           <div>

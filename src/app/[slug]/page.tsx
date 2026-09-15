@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { services, serviceBySlug } from "@/data/services";
+import { cities, cityBySlug } from "@/data/cities";
+import { CityPage } from "./CityPage";
 import { reviews } from "@/data/reviews";
 import { site } from "@/data/site";
 import { meta } from "@/lib/seo";
@@ -19,15 +21,29 @@ import { Arrow, Check, Phone, ServicePictogram } from "@/components/Icons";
 type Params = { params: Promise<{ slug: string }> };
 
 export const dynamicParams = false;
-export function generateStaticParams() { return services.map((s) => ({ slug: s.slug })); }
+/** One flat route serves both service pages (/box-truck-freight/) and city pages (/trucking-orlando/). */
+const CITY = "trucking-";
+export function generateStaticParams() { return [...services.map((s) => ({ slug: s.slug })), ...cities.map((c) => ({ slug: `${CITY}${c.slug}` }))]; }
 export async function generateMetadata({ params }: Params) {
-  const s = serviceBySlug((await params).slug);
+  const { slug } = await params;
+  if (slug.startsWith(CITY)) {
+    const c = cityBySlug(slug.slice(CITY.length));
+    if (!c) return {};
+    return { ...meta(`Trucking Company in ${c.name}, FL | Same-Day Freight | Total Coverage Trucking`, `Asset-based trucking in ${c.name} and ${c.county}. Same-day cargo van, box truck and flatbed freight across ${c.region}. Our trucks, our CDL drivers. Quote in 1 business hour.`, `/${slug}/`, c.image), keywords: c.keywords };
+  }
+  const s = serviceBySlug(slug);
   if (!s) return {};
   return { ...meta(s.title, s.description, `/${s.slug}/`, s.image), keywords: s.keywords };
 }
 
 export default async function ServicePage({ params }: Params) {
-  const s = serviceBySlug((await params).slug);
+  const { slug } = await params;
+  if (slug.startsWith(CITY)) {
+    const c = cityBySlug(slug.slice(CITY.length));
+    if (!c) notFound();
+    return <CityPage c={c} />;
+  }
+  const s = serviceBySlug(slug);
   if (!s) notFound();
   const others = services.filter((o) => o.slug !== s.slug).slice(0, 3);
   const svcReviews = reviews.filter((r) => r.service === s.slug);

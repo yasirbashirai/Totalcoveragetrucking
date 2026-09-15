@@ -129,3 +129,8 @@ details[open] .chev { transform: rotate(180deg); }
   .reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-up { opacity: 1 !important; transform: none !important; }
   .marquee, .route-line, .pulse-dot, .drive-in, .kenburns, .word > span { animation: none !important; }
 }
+
+/* Responsive polish */
+h1, h2, h3 { text-wrap: balance; overflow-wrap: anywhere; }
+p { text-wrap: pretty; }
+@media (max-width: 640px) { .display { line-height: 1; } }

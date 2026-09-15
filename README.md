@@ -4,13 +4,14 @@ Conversion-focused, SEO-structured marketing site for **Total Coverage Trucking,
 
 Built with **Next.js 16 (App Router) + React 19 + Tailwind CSS 4 + TypeScript**. Fully static except the lead API, quote page and thank-you page.
 
-## Pages (29 routes)
+## Pages (38 routes)
 
 | Route | Purpose |
 |---|---|
 | `/` | Home funnel: hero + instant quote card, services, how it works, interactive fleet, Florida coverage map, carrier-vs-broker, reviews, FAQ, blog, CTA |
 | `/services/` | Service hub with comparison table |
 | `/same-day-freight-delivery-florida/` `/cargo-van-delivery/` `/box-truck-freight/` `/flatbed-trucking/` `/dedicated-contract-trucking/` `/product-distribution/` | Six SEO service pages, each with specs, FAQs, schema and a sticky quote form |
+| `/trucking-jacksonville/` `/trucking-orlando/` `/trucking-tampa/` `/trucking-miami/` `/trucking-fort-lauderdale/` `/trucking-west-palm-beach/` `/trucking-fort-myers/` `/trucking-tallahassee/` | Eight city landing pages for local SEO (unique copy, lanes, industries, FAQs, City-scoped Service schema) |
 | `/about-us/` | Trust, credentials, roadmap |
 | `/service-area/` | Florida map, metro hubs, corridors, regional states |
 | `/get-a-quote/` | Two-step quote form with live same-day lane check |
@@ -25,7 +26,7 @@ Built with **Next.js 16 (App Router) + React 19 + Tailwind CSS 4 + TypeScript**.
 src/
   app/            routes (one folder per page), layout, sitemap, robots, api/lead
   components/     Header, Footer, QuoteForm, ContactForm, DriverForm, FleetTabs, FloridaMap, ...
-  data/           site.ts (all business facts), services.ts, blog.ts, reviews.ts, faqs.ts
+  data/           site.ts (all business facts), services.ts, cities.ts, blog.ts, reviews.ts, faqs.ts
   lib/            seo.ts (metadata), schema.ts (JSON-LD), florida.ts (ZIP lane check), analytics.ts
 public/images/    fleet photography + logo
 docs/             client proposal
