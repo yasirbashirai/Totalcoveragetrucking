@@ -58,8 +58,9 @@ Without a provider configured, leads are logged to the server console (nothing i
 
 ## Before launch
 
-- [ ] Real phone number, mailbox, USDOT / MC in `src/data/site.ts`
+- [x] Phone number (407-907-8401) set 2026-09-19
+- [ ] Confirm mailbox (`site.email`) and add USDOT / MC in `src/data/site.ts`
 - [ ] Replace sample reviews in `src/data/reviews.ts` with real ones
-- [ ] Swap `public/images/*` for the client's own fleet photography (same filenames)
+- [ ] Swap `public/images/*` for the client's own fleet photography (same filenames). Current photos are Unsplash-licensed placeholders chosen to emphasise 26 ft box trucks + flatbeds (2026-09-19); no third-party logos or watermarks.
 - [ ] Social URLs in `site.social`
 - [ ] Set env vars above and deploy to Vercel

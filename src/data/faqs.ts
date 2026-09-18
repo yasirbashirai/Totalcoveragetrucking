@@ -1,5 +1,5 @@
 export const faqs = [
-  { q: "Are you a trucking company or a freight broker?", a: "We are an asset-based carrier. Your freight moves on our trucks with our CDL drivers, and the dispatcher who quotes your load is the same person who tracks it to delivery. We do not resell your shipment to another carrier." },
+  { q: "Are you a trucking company or a freight broker?", a: "We are an asset-based carrier. Your freight moves on our trucks with our own vetted drivers, and the dispatcher who quotes your load is the same person who tracks it to delivery. We do not resell your shipment to another carrier." },
   { q: "What areas do you cover?", a: "Same-day service covers all of Florida. Regional next-day lanes run into Georgia, Alabama, South Carolina, North Carolina and Tennessee." },
   { q: "How fast will I get a quote?", a: "Quote requests submitted during dispatch hours (Mon–Fri, 9:00 AM–6:00 PM ET) are answered within one business hour. Requests received after hours are answered first thing the next morning." },
   { q: "What equipment do you run?", a: "Cargo / Sprinter vans for small urgent loads, 26 ft box trucks with liftgates for LTL and distribution, and flatbeds for building materials and equipment." },
@@ -12,7 +12,7 @@ export const faqs = [
 ];
 
 export const driverFaqs = [
-  { q: "What licenses do I need?", a: "A valid CDL (Class A for flatbed, Class B for box truck) with a clean MVR. Cargo van positions require a standard driver's license with a clean record." },
+  { q: "What licenses do I need?", a: "Box truck and cargo van positions require a standard driver's license with a clean record (no CDL needed). Flatbed and 53 ft dry van positions require a valid CDL Class A with a clean MVR." },
   { q: "Will I be home every night?", a: "Yes. We run Florida same-day and regional lanes, so drivers are home daily on most routes." },
   { q: "Is the equipment company-owned?", a: "Yes. You drive well-maintained company trucks. Owner-operators can also apply to run under our authority on dedicated lanes." },
   { q: "How fast is the hiring process?", a: "Applications are reviewed within two business days. Qualified drivers are contacted for a call, then an orientation and road test." },

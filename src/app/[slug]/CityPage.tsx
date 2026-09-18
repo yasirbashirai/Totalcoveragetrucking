@@ -82,7 +82,7 @@ export function CityPage({ c }: { c: City }) {
 
       <section className="bg-cloud py-16">
         <Container>
-          <SectionHead eyebrow="Why local shippers choose us" title={`An asset-based carrier for ${c.name}`} sub="Our trucks, our CDL drivers and one dispatcher who quotes your load and tracks it to the signature. No brokering, no transfers." />
+          <SectionHead eyebrow="Why local shippers choose us" title={`An asset-based carrier for ${c.name}`} sub="Our trucks, our vetted drivers and one dispatcher who quotes your load and tracks it to the signature. No brokering, no transfers." />
           <div className="mt-10 flex flex-wrap justify-center gap-3">
             <Link href="/about-us/" className="btn-outline px-6 py-3">About the company</Link>
             <Link href="/service-area/" className="btn-outline px-6 py-3">Full service area</Link>

@@ -11,7 +11,7 @@ import { Arrow, Shield, Clock, Route, Users, Truck, Check } from "@/components/I
 
 export const metadata = meta(
   "About Total Coverage Trucking | Asset-Based Florida Carrier",
-  "Total Coverage Trucking, LLC is a Florida trucking company that moves product with its own trucks and CDL drivers. Learn how we operate, what we promise and where we are headed.",
+  "Total Coverage Trucking, LLC is a Florida trucking company that moves product with its own trucks and drivers. Learn how we operate, what we promise and where we are headed.",
   "/about-us/", "/images/office.webp"
 );
 
@@ -23,7 +23,7 @@ const VALUES = [
 ];
 
 const ROADMAP = [
-  { when: "Today", t: "Florida same-day, Southeast regional", s: "Cargo van, box truck and flatbed capacity dispatched statewide, next-day lanes into GA, AL, SC, NC and TN." },
+  { when: "Today", t: "Florida same-day, Southeast regional", s: "Cargo van, box truck, flatbed and dry van capacity dispatched statewide, next-day lanes into GA, AL, SC, NC and TN." },
   { when: "Next 12 months", t: "Dedicated routes and more units", s: "Adding trucks against committed distribution routes so shippers get the same driver on the same lane every week." },
   { when: "24 months", t: "10-truck fleet, nationwide lanes", s: "Growing the fleet on the back of dedicated agreements and opening longer-haul lanes for existing customers." },
 ];
@@ -44,8 +44,8 @@ export default function AboutPage() {
             <h2 className="display mt-3 text-4xl text-navy sm:text-5xl">Built for the shipper who needs it moved today</h2>
             <div className="mt-6 space-y-4 text-[16px] leading-relaxed text-slate">
               <p>We started {site.name} with a focused idea: Florida businesses need a carrier that answers the phone, quotes in an hour and shows up with its own truck. Not a broker reselling the load, not a national fleet that treats a same-day pallet as an afterthought.</p>
-              <p>We run cargo vans, 26 ft box trucks and flatbeds with CDL-licensed drivers, dispatched from a single desk that sees every load. Manufacturers, distributors, contractors and retailers use us for the shipments that cannot wait, and for the weekly routes they would rather not re-quote.</p>
-              <p>We are an early-stage company and we say so. What you get is a carrier that is hungry, organized and honest about what it can cover, and a dispatcher who will tell you straight if a lane is not ours.</p>
+              <p>We run cargo vans, 26 ft box trucks, flatbeds and 53 ft dry vans with vetted company drivers (CDL on the flatbed and dry van), dispatched from a single desk that sees every load. Manufacturers, distributors, contractors and retailers use us for the shipments that cannot wait, and for the weekly routes they would rather not re-quote.</p>
+              <p>We are a growing carrier, and we would rather be straight with you than oversell. What you get is a team that is hungry, organized and honest about what it can cover, and a dispatcher who will tell you up front if a lane is not ours.</p>
             </div>
           </div>
           <div className="reveal-right grid grid-cols-2 gap-4">

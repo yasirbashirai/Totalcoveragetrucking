@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Params) {
   if (slug.startsWith(CITY)) {
     const c = cityBySlug(slug.slice(CITY.length));
     if (!c) return {};
-    return { ...meta(`Trucking Company in ${c.name}, FL | Same-Day Freight | Total Coverage Trucking`, `Asset-based trucking in ${c.name} and ${c.county}. Same-day cargo van, box truck and flatbed freight across ${c.region}. Our trucks, our CDL drivers. Quote in 1 business hour.`, `/${slug}/`, c.image), keywords: c.keywords };
+    return { ...meta(`Trucking Company in ${c.name}, FL | Same-Day Freight | Total Coverage Trucking`, `Asset-based trucking in ${c.name} and ${c.county}. Same-day cargo van, box truck and flatbed freight across ${c.region}. Our trucks, our drivers. Quote in 1 business hour.`, `/${slug}/`, c.image), keywords: c.keywords };
   }
   const s = serviceBySlug(slug);
   if (!s) return {};
@@ -75,7 +75,7 @@ export default async function ServicePage({ params }: Params) {
                 <ul className="mt-5 grid gap-3">{s.bullets.map((b) => <li key={b} className="flex items-start gap-3 text-[15px] text-ink"><span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-orange-100 text-orange"><Check className="h-3.5 w-3.5" /></span>{b}</li>)}</ul>
               </div>
               <div>
-                <h2 className="display text-3xl text-navy">Best for</h2>
+                <h2 className="display text-3xl text-navy">Typical loads</h2>
                 <ul className="mt-5 grid gap-2">{s.fit.map((b) => <li key={b} className="rounded-lg border border-line bg-cloud px-4 py-2.5 text-[15px] font-semibold text-navy">{b}</li>)}</ul>
               </div>
             </div>

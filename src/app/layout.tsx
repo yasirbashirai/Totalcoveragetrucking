@@ -17,7 +17,7 @@ const oswald = Oswald({ subsets: ["latin"], variable: "--font-oswald", display: 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: { default: `${site.name} | Asset-Based Freight Carrier in Florida`, template: `%s | ${site.name}` },
-  description: "Asset-based trucking company moving product across Florida and the Southeast. Same-day freight, cargo van, box truck and flatbed with our own trucks and CDL drivers.",
+  description: "Asset-based trucking company moving product across Florida and the Southeast. Same-day freight, cargo van, box truck, flatbed and 53 ft dry van with our own trucks and drivers.",
   applicationName: site.name,
   robots: { index: true, follow: true },
   icons: { icon: "/favicon.ico", apple: "/apple-touch-icon.png" },

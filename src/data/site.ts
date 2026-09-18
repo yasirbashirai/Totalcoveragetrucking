@@ -9,8 +9,8 @@ export const site = {
   tagline: "Total Coverage. Every Mile.",
   url: "https://totalcoveragetrucking.com",
   category: "Asset-based trucking and freight carrier",
-  phone: "(123) 456-7890",           // TODO: real business line (intake form: 1234567890)
-  phoneHref: "tel:+11234567890",
+  phone: "(407) 907-8401",
+  phoneHref: "tel:+14079078401",
   email: "info@totalcoveragetrucking.com", // TODO: confirm mailbox
   hours: "Mon–Fri, 9:00 AM–6:00 PM ET",
   hoursShort: "Mon–Fri 9am–6pm",
@@ -27,15 +27,16 @@ export const site = {
   /** Honest, verifiable trust points. No inflated claims for an early-stage carrier. */
   trust: [
     { label: "Asset-Based Carrier", sub: "Our trucks, our drivers" },
-    { label: "CDL-Licensed Drivers", sub: "Vetted and compliant" },
+    { label: "Vetted Company Drivers", sub: "Screened, insured, compliant" },
     { label: "Same-Day Florida Delivery", sub: "Dispatch Mon–Fri 9–6" },
     { label: "One Point of Contact", sub: "Quote to delivery" },
   ],
-  /** Equipment shown in the logo: cargo van, box truck, flatbed. */
+  /** Fleet units. `pallets` = standard 48x40 pallet count, shown wherever a unit is compared. */
   equipment: [
-    { key: "van", name: "Cargo / Sprinter Van", capacity: "Up to 3,000 lbs · 2–3 pallets", best: "Small, urgent, time-critical freight" },
-    { key: "box", name: "Box Truck (26 ft)", capacity: "Up to 10,000 lbs · 10–12 pallets", best: "LTL, retail, final-mile distribution" },
-    { key: "flatbed", name: "Flatbed", capacity: "Up to 48,000 lbs · 48–53 ft", best: "Building materials, equipment, oversized" },
+    { key: "van", name: "Cargo / Sprinter Van", capacity: "Up to 3,000 lbs", pallets: "2–3 standard pallets", best: "Small, urgent, time-critical freight" },
+    { key: "box", name: "Box Truck (26 ft)", capacity: "Up to 10,000 lbs", pallets: "10–12 standard pallets", best: "LTL, retail, final-mile distribution" },
+    { key: "flatbed", name: "Flatbed", capacity: "Up to 48,000 lbs", pallets: "24–26 standard pallets", best: "Building materials, equipment, oversized" },
+    { key: "dryvan", name: "Dry Van (53 ft)", capacity: "Up to 45,000 lbs", pallets: "24–26 standard pallets", best: "Full truckload, enclosed and secure" },
   ],
   floridaMarkets: ["Jacksonville", "Orlando", "Tampa", "Miami", "Fort Lauderdale", "West Palm Beach", "Fort Myers", "Sarasota", "Daytona Beach", "Gainesville", "Tallahassee", "Pensacola", "Lakeland", "Ocala"],
   regionalStates: ["Georgia", "Alabama", "South Carolina", "North Carolina", "Tennessee"],

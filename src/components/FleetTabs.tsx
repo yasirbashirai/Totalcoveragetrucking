@@ -7,7 +7,8 @@ import { Arrow, Check, ServicePictogram } from "./Icons";
 const DETAIL: Record<string, { slug: string; specs: [string, string][]; loads: string[]; note: string }> = {
   van: { slug: "cargo-van-delivery", specs: [["Payload", "3,000 lbs"], ["Pallets", "2–3"], ["Cargo", "12–14 ft"], ["Access", "Any street / garage"]], loads: ["Line-down parts", "Medical & lab supplies", "Documents & samples", "E-commerce overflow"], note: "Fastest unit in the fleet. Usually the cheapest option for 1–3 pallets." },
   box: { slug: "box-truck-freight", specs: [["Payload", "10,000 lbs"], ["Pallets", "10–12"], ["Box", "26 ft"], ["Liftgate", "Standard"]], loads: ["Retail replenishment", "Furniture & fixtures", "Multi-stop routes", "Final-mile delivery"], note: "Liftgate and pallet jack on every truck, so no-dock deliveries are standard." },
-  flatbed: { slug: "flatbed-trucking", specs: [["Payload", "48,000 lbs"], ["Deck", "48–53 ft"], ["Securement", "Straps, chains, tarps"], ["Permits", "On request"]], loads: ["Lumber & trusses", "Steel & rebar", "Machinery", "Block, pavers & stone"], note: "CDL drivers handle securement and tarping. Job-site and lay-down yard delivery." },
+  flatbed: { slug: "flatbed-trucking", specs: [["Payload", "48,000 lbs"], ["Pallets", "24–26"], ["Deck", "48–53 ft"], ["Securement", "Straps, chains, tarps"]], loads: ["Lumber & trusses", "Steel & rebar", "Machinery", "Block, pavers & stone"], note: "CDL drivers handle securement and tarping. Job-site and lay-down yard delivery." },
+  dryvan: { slug: "dry-van-trucking", specs: [["Payload", "45,000 lbs"], ["Pallets", "24–26"], ["Trailer", "53 ft"], ["Loading", "Dock, live or drop"]], loads: ["Palletized consumer goods", "Retail DC loads", "Plant-to-warehouse transfers", "Furniture & appliances"], note: "Full-truckload capacity in a sealed, enclosed trailer. One driver, dock to dock." },
 };
 
 /** Interactive fleet selector: pick a unit, see specs and best-fit loads. */
@@ -17,11 +18,11 @@ export function FleetTabs() {
   const d = DETAIL[key];
   return (
     <div className="grid gap-6 lg:grid-cols-[320px_1fr]">
-      <div className="grid gap-2 sm:grid-cols-3 lg:grid-cols-1" role="tablist" aria-label="Fleet equipment">
+      <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-1" role="tablist" aria-label="Fleet equipment">
         {site.equipment.map((e) => (
           <button key={e.key} role="tab" aria-selected={key === e.key} onClick={() => setKey(e.key)} className={`flex items-center gap-3 rounded-xl border-2 p-4 text-left transition ${key === e.key ? "border-orange bg-white shadow-[var(--shadow-lift)]" : "border-line bg-white/70 hover:border-orange/40"}`}>
-            <ServicePictogram name={e.key as "van" | "box" | "flatbed"} className={`h-9 w-14 shrink-0 ${key === e.key ? "text-orange" : "text-navy"}`} />
-            <span><span className="block font-bold text-navy">{e.name}</span><span className="block text-[12px] text-muted">{e.capacity}</span></span>
+            <ServicePictogram name={e.key as "van" | "box" | "flatbed" | "dryvan"} className={`h-9 w-14 shrink-0 ${key === e.key ? "text-orange" : "text-navy"}`} />
+            <span><span className="block font-bold text-navy">{e.name}</span><span className="block text-[12px] text-muted">{e.capacity} · {e.pallets}</span></span>
           </button>
         ))}
       </div>

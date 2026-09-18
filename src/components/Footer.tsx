@@ -15,7 +15,7 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.3fr_1fr_0.9fr_0.9fr_1.1fr]">
           <div>
             <Link href="/" className="inline-block rounded-xl bg-white p-3"><span className="relative block h-16 w-[140px]"><Image src="/images/logo.webp" alt={`${site.name} logo`} fill sizes="140px" className="object-contain" /></span></Link>
-            <p className="mt-4 max-w-sm text-[14px] leading-relaxed">{site.legalName} is an asset-based trucking company moving product across Florida and the Southeast. Same-day freight, cargo van, box truck and flatbed, with our own trucks and CDL drivers.</p>
+            <p className="mt-4 max-w-sm text-[14px] leading-relaxed">{site.legalName} is an asset-based trucking company moving product across Florida and the Southeast. Same-day freight, cargo van, box truck, flatbed and 53 ft dry van, with our own trucks and drivers.</p>
             <div className="mt-4 flex gap-3">
               {site.social.facebook && <a href={site.social.facebook} target="_blank" rel="noopener" aria-label="Facebook" className="grid h-9 w-9 place-items-center rounded-full bg-white/10 hover:bg-orange"><Facebook className="h-4 w-4" /></a>}
               {site.social.instagram && <a href={site.social.instagram} target="_blank" rel="noopener" aria-label="Instagram" className="grid h-9 w-9 place-items-center rounded-full bg-white/10 hover:bg-orange"><Instagram className="h-4 w-4" /></a>}

@@ -24,7 +24,7 @@ import { Arrow, Check, Chevron, Phone, Shield, Clock, Route, FileText, Truck, X 
 
 export const metadata = meta(
   "Total Coverage Trucking | Same-Day Freight & Asset-Based Trucking in Florida",
-  "Asset-based trucking company moving product across Florida and the Southeast. Same-day freight delivery, cargo van, box truck and flatbed with our own trucks and CDL drivers. Quote in 1 business hour.",
+  "Asset-based trucking company moving product across Florida and the Southeast. Same-day freight delivery, cargo van, box truck, flatbed and 53 ft dry van with our own trucks and drivers. Quote in 1 business hour.",
   "/"
 );
 
@@ -53,7 +53,7 @@ export default function Home() {
       {/* 1 ── HERO: promise + two CTAs + instant quote card */}
       <section className="hero-bg relative overflow-hidden text-white">
         <div className="absolute inset-0" aria-hidden="true">
-          <Image src="/images/hero-dry-van.webp" alt="" fill priority sizes="100vw" className="kenburns object-cover opacity-35" />
+          <Image src="/images/box-truck-flatbed-highway.webp" alt="" fill priority sizes="100vw" className="kenburns object-cover opacity-35" />
           <div className="absolute inset-0 bg-gradient-to-r from-navy-900 via-navy-900/85 to-navy-900/20" />
           <div className="absolute inset-0 bg-gradient-to-t from-navy-900 via-transparent to-transparent" />
         </div>
@@ -70,7 +70,7 @@ export default function Home() {
               <Words text="Delivered today." start={560} />
             </h1>
             <p className="reveal mt-6 max-w-xl text-lg leading-relaxed text-white/80 sm:text-xl" style={{ ["--d" as string]: "700ms" }}>
-              {site.legalName} is an asset-based carrier moving product across Florida and the Southeast. Cargo van, box truck and flatbed, driven by our own CDL drivers, with one dispatcher on your load from quote to signature.
+              {site.legalName} is an asset-based carrier moving product across Florida and the Southeast. Cargo van, 26 ft box truck, flatbed and 53 ft dry van, driven by our own vetted drivers, with one dispatcher on your load from quote to signature.
             </p>
             <div className="reveal mt-8 flex flex-wrap gap-3" style={{ ["--d" as string]: "820ms" }}>
               <Link href="/get-a-quote/" className="btn-orange display-md px-7 py-4 text-lg">Get a Freight Quote <Arrow className="h-5 w-5" /></Link>
@@ -133,7 +133,7 @@ export default function Home() {
       {/* 4 ── FLEET (interactive) */}
       <section className="bg-mist py-20" id="fleet">
         <Container>
-          <SectionHead eyebrow="The fleet" title="The right truck for the load" sub="Three unit types cover everything from a single urgent pallet to 48,000 lbs of building materials." />
+          <SectionHead eyebrow="The fleet" title="The right truck for the load" sub="Four unit types cover everything from a single urgent pallet to a full 53 ft trailer." />
           <div className="reveal mt-12"><FleetTabs /></div>
         </Container>
       </section>
@@ -168,7 +168,7 @@ export default function Home() {
         <Container className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="reveal-left relative">
             <div className="relative aspect-[3/4] overflow-hidden rounded-3xl shadow-[var(--shadow-lift)]">
-              <Image src="/images/truck-road.webp" alt="Total Coverage Trucking semi truck on the road" fill sizes="(min-width: 1024px) 45vw, 100vw" className="object-cover" />
+              <Image src="/images/flatbed-lumber.webp" alt="Total Coverage Trucking flatbed loaded with lumber" fill sizes="(min-width: 1024px) 45vw, 100vw" className="object-cover" />
             </div>
             <div className="absolute -bottom-6 -right-4 max-w-[240px] rounded-2xl bg-white p-5 shadow-[var(--shadow-lift)] sm:right-6">
               <Shield className="h-8 w-8 text-orange" />

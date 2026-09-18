@@ -55,7 +55,7 @@ export const posts: Post[] = [
     slug: "asset-based-carrier-vs-freight-broker",
     title: "Asset-Based Carrier vs. Freight Broker: Why It Matters for Your Freight",
     description: "The practical differences between shipping with a company that owns its trucks and one that resells your load, and when each makes sense.",
-    date: "2026-08-05", readMins: 4, image: "/images/fleet-yard.webp", imageAlt: "Row of semi trucks in a carrier yard", category: "Industry",
+    date: "2026-08-05", readMins: 4, image: "/images/box-truck-facility.webp", imageAlt: "Box truck backed up to a customer facility", category: "Industry",
     keywords: ["asset based carrier vs broker", "freight broker vs trucking company"],
     body: [
       { p: "Every freight quote you receive comes from one of two kinds of company: a carrier that owns trucks, or a broker that finds one. Both have a place in logistics. Knowing which you are dealing with changes what you should expect." },
@@ -73,7 +73,7 @@ export const posts: Post[] = [
     slug: "how-to-prepare-a-pallet-shipment-for-pickup",
     title: "How to Prepare a Pallet Shipment for Pickup (Checklist)",
     description: "A dock-ready checklist for palletizing, labeling and staging freight so the driver can load fast and your shipment arrives undamaged.",
-    date: "2026-07-22", readMins: 3, image: "/images/reefer-dock.webp", imageAlt: "Trucks at a warehouse loading dock", category: "Shipping Guides",
+    date: "2026-07-22", readMins: 3, image: "/images/box-trucks-dock.webp", imageAlt: "Box trucks at a warehouse loading dock", category: "Shipping Guides",
     keywords: ["how to prepare pallet shipment", "pallet shipping checklist"],
     body: [
       { p: "A well-prepared pallet loads in minutes and arrives the way it left. A poorly prepared one costs time at both docks and is the number one cause of damage. Use this checklist before the driver arrives." },

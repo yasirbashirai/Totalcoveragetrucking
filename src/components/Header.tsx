@@ -63,19 +63,18 @@ export function Header() {
             </span>
           </Link>
 
-          <nav className="hidden items-center gap-0.5 lg:flex" aria-label="Primary">
+          {/* Mega menu is anchored to the nav's left edge (not centred on the link) so it never runs off-screen on 13–15" laptops. */}
+          <nav className="relative hidden items-center gap-0.5 lg:flex" aria-label="Primary" onMouseLeave={() => setMega(false)}>
             {NAV.map((n) =>
               n.mega ? (
-                <div key={n.href} className="relative" onMouseEnter={() => setMega(true)} onMouseLeave={() => setMega(false)}>
-                  <Link href={n.href} className={`inline-flex items-center gap-1 whitespace-nowrap rounded-md px-2.5 py-2 text-[15px] font-semibold hover:text-orange ${path?.startsWith("/services") || mega ? "text-orange" : "text-navy"}`} aria-expanded={mega}>
-                    {n.label} <Chevron className="h-4 w-4 opacity-70" />
-                  </Link>
-                  {mega && <MegaMenu />}
-                </div>
+                <Link key={n.href} href={n.href} onMouseEnter={() => setMega(true)} onFocus={() => setMega(true)} className={`inline-flex items-center gap-1 whitespace-nowrap rounded-md px-2.5 py-2 text-[15px] font-semibold hover:text-orange ${path?.startsWith("/services") || mega ? "text-orange" : "text-navy"}`} aria-expanded={mega} aria-haspopup="true">
+                  {n.label} <Chevron className="h-4 w-4 opacity-70" />
+                </Link>
               ) : (
-                <Link key={n.href} href={n.href} className={`whitespace-nowrap rounded-md px-2.5 py-2 text-[15px] font-semibold hover:text-orange ${path === n.href || (n.href !== "/" && path?.startsWith(n.href)) ? "text-orange" : "text-navy"}`}>{n.label}</Link>
+                <Link key={n.href} href={n.href} onMouseEnter={() => setMega(false)} className={`whitespace-nowrap rounded-md px-2.5 py-2 text-[15px] font-semibold hover:text-orange ${path === n.href || (n.href !== "/" && path?.startsWith(n.href)) ? "text-orange" : "text-navy"}`}>{n.label}</Link>
               )
             )}
+            {mega && <MegaMenu />}
           </nav>
 
           <div className="flex items-center gap-2 sm:gap-3">
@@ -129,9 +128,9 @@ export function Header() {
 
 function MegaMenu() {
   return (
-    <div className="absolute left-1/2 top-full z-50 w-[760px] -translate-x-1/2 pt-3">
+    <div className="absolute left-0 top-full z-50 w-[780px] max-w-[calc(100vw-2rem)] pt-3 xl:w-[920px]">
       <div className="overflow-hidden rounded-2xl border border-line bg-white shadow-[var(--shadow-lift)]">
-        <div className="grid grid-cols-3 gap-1 p-3">
+        <div className="grid grid-cols-3 gap-1 p-3 xl:grid-cols-4">
           {services.map((s) => (
             <Link key={s.slug} href={`/${s.slug}/`} className="group flex gap-3 rounded-xl p-3 transition hover:bg-orange-100/60">
               <ServicePictogram name={s.icon} className="mt-0.5 h-7 w-11 shrink-0 text-navy transition group-hover:text-orange" />

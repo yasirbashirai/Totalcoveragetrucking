@@ -9,7 +9,7 @@ import { Check, Phone, Clock, Shield, Dollar } from "@/components/Icons";
 
 export const metadata = meta(
   "Get a Freight Quote | Total Coverage Trucking Florida",
-  "Request a same-day or scheduled freight quote from an asset-based Florida carrier. Cargo van, box truck and flatbed. Flat rates answered within one business hour.",
+  "Request a same-day or scheduled freight quote from an asset-based Florida carrier. Cargo van, box truck, flatbed and dry van. Flat rates answered within one business hour.",
   "/get-a-quote/"
 );
 
@@ -26,7 +26,7 @@ export default async function QuotePage({ searchParams }: { searchParams: Promis
             <h1 className="display reveal mt-3 text-5xl sm:text-6xl" style={{ ["--d" as string]: "80ms" }}>A truck, a time and a price. Within the hour.</h1>
             <p className="reveal mt-5 text-lg text-white/80" style={{ ["--d" as string]: "160ms" }}>Two short steps. Dispatch reads every request personally and replies with a flat, all-in rate. No broker margin, no accessorial surprises.</p>
             <ul className="reveal mt-8 grid gap-4" style={{ ["--d" as string]: "240ms" }}>
-              {[[Clock, "Answered within 1 business hour", site.hours], [Dollar, "Flat, all-in rates", "Fuel, liftgate and driver assist included in the number we send"], [Shield, "Asset-based carrier", "Our trucks, our CDL drivers, cargo and liability insured"], [Check, "Same-day eligible", "Florida to Florida booked by 12:00 PM ET"]].map(([I, t, s]) => {
+              {[[Clock, "Answered within 1 business hour", site.hours], [Dollar, "Flat, all-in rates", "Fuel, liftgate and driver assist included in the number we send"], [Shield, "Asset-based carrier", "Our trucks, our vetted drivers, cargo and liability insured"], [Check, "Same-day eligible", "Florida to Florida booked by 12:00 PM ET"]].map(([I, t, s]) => {
                 const Icon = I as typeof Clock;
                 return <li key={t as string} className="flex items-start gap-3"><span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-white/10 text-orange-300"><Icon className="h-5 w-5" /></span><span><strong className="block text-white">{t as string}</strong><span className="text-[14px] text-white/65">{s as string}</span></span></li>;
               })}

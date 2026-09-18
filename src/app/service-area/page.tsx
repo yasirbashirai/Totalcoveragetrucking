@@ -16,7 +16,7 @@ import { Arrow, Pin } from "@/components/Icons";
 export const metadata = meta(
   "Service Area | Same-Day Trucking Across Florida & the Southeast",
   "Total Coverage Trucking serves all 67 Florida counties with same-day freight delivery, plus next-day regional lanes into Georgia, Alabama, South Carolina, North Carolina and Tennessee.",
-  "/service-area/", "/images/reefer.webp"
+  "/service-area/", "/images/box-truck-flatbed-highway.webp"
 );
 
 const CORRIDORS = [
@@ -30,7 +30,7 @@ export default function ServiceAreaPage() {
   return (
     <>
       <JsonLd data={breadcrumbSchema([{ name: "Service Area", path: "/service-area/" }])} />
-      <PageHero eyebrow="Service area" title="Every Florida county, same day" sub="Dispatched from the truck nearest your dock. Regional lanes into the Southeast run next business day, and longer hauls are quoted case by case." image="/images/reefer.webp" imageAlt="Total Coverage Trucking semi truck on a Florida highway" crumbs={[{ name: "Service Area", path: "/service-area/" }]}>
+      <PageHero eyebrow="Service area" title="Every Florida county, same day" sub="Dispatched from the truck nearest your dock. Regional lanes into the Southeast run next business day, and longer hauls are quoted case by case." image="/images/box-truck-flatbed-highway.webp" imageAlt="Total Coverage Trucking box truck and flatbed on a Florida highway" crumbs={[{ name: "Service Area", path: "/service-area/" }]}>
         <Link href="#quote" className="btn-orange display-md px-7 py-4 text-lg">Check my lane <Arrow className="h-5 w-5" /></Link>
       </PageHero>
 
@@ -75,7 +75,7 @@ export default function ServiceAreaPage() {
       </section>
 
       <section className="relative h-[42vh] min-h-[280px] overflow-hidden">
-        <Image src="/images/truck-front.webp" alt="Total Coverage Trucking truck ready for dispatch" fill sizes="100vw" className="object-cover" />
+        <Image src="/images/flatbed-lumber.webp" alt="Total Coverage Trucking flatbed ready for dispatch" fill sizes="100vw" className="object-cover" />
         <div className="absolute inset-0 bg-navy-900/60" />
         <div className="absolute inset-0 grid place-items-center text-center text-white"><p className="display max-w-3xl px-5 text-3xl sm:text-5xl">Wherever the dock is, we know the road there.</p></div>
       </section>

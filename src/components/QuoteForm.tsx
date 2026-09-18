@@ -7,8 +7,9 @@ import { Arrow, Bolt, Check, ServicePictogram } from "./Icons";
 
 const EQUIP = [
   { key: "Cargo / Sprinter Van", icon: "van", sub: "≤ 3,000 lbs · 2–3 pallets" },
-  { key: "26 ft Box Truck", icon: "box", sub: "≤ 10,000 lbs · 10–12 pallets" },
-  { key: "Flatbed", icon: "flatbed", sub: "≤ 48,000 lbs · open deck" },
+  { key: "Box Truck (26 ft)", icon: "box", sub: "≤ 10,000 lbs · 10–12 pallets" },
+  { key: "Flatbed", icon: "flatbed", sub: "≤ 48,000 lbs · 24–26 pallets" },
+  { key: "Dry Van (53 ft)", icon: "dryvan", sub: "≤ 45,000 lbs · 24–26 pallets" },
   { key: "Not sure", icon: "bolt", sub: "We'll match the truck" },
 ] as const;
 
@@ -50,9 +51,9 @@ export function QuoteForm({ compact = false, service = "", title, equipment = ""
         <div className="grid gap-3">
           <div>
             <span className="label">Equipment</span>
-            <div className={`grid gap-2 ${compact ? "grid-cols-2" : "grid-cols-2 sm:grid-cols-4"}`}>
+            <div className={`grid gap-2 ${compact ? "grid-cols-2" : "grid-cols-2 sm:grid-cols-3 md:grid-cols-5"}`}>
               {EQUIP.map((e) => (
-                <button type="button" key={e.key} onClick={() => set("equipment", e.key)} className={`flex flex-col items-start rounded-xl border-2 p-2.5 text-left transition ${f.equipment === e.key ? "border-orange bg-orange-100/60" : "border-line bg-white hover:border-orange/50"}`} aria-pressed={f.equipment === e.key}>
+                <button type="button" key={e.key} onClick={() => set("equipment", e.key)} className={`flex flex-col items-start rounded-xl border-2 p-2.5 text-left transition ${compact && e.key === "Not sure" ? "col-span-2" : ""} ${f.equipment === e.key ? "border-orange bg-orange-100/60" : "border-line bg-white hover:border-orange/50"}`} aria-pressed={f.equipment === e.key}>
                   {e.icon === "bolt" ? <Bolt className="h-6 w-6 text-orange" /> : <ServicePictogram name={e.icon} className="h-6 w-10 text-navy" />}
                   <span className="mt-1.5 text-[13px] font-bold leading-tight text-navy">{e.key}</span>
                   <span className="text-[11px] text-muted">{e.sub}</span>

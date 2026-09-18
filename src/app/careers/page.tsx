@@ -13,15 +13,15 @@ import { PhoneLink } from "@/components/PhoneLink";
 import { Arrow, Check, Phone, ServicePictogram } from "@/components/Icons";
 
 export const metadata = meta(
-  "CDL Driver Jobs in Florida | Careers at Total Coverage Trucking",
-  "Hiring CDL Class A and Class B drivers, cargo van drivers and owner-operators in Florida. Company equipment, same-day and regional lanes, home daily on most routes. Apply online in 3 minutes.",
-  "/careers/", "/images/truck-front.webp"
+  "Truck Driver Jobs in Florida (CDL & Non-CDL) | Careers at Total Coverage Trucking",
+  "Hiring non-CDL box truck and cargo van drivers plus CDL flatbed and dry van drivers in Florida. Company equipment, same-day and regional lanes, home daily on most routes. Apply online in 3 minutes.",
+  "/careers/", "/images/truck-highway.webp"
 );
 
 const ROLES = [
-  { icon: "flatbed", t: "CDL-A Flatbed Driver", s: "Building materials and equipment across Florida and the Southeast. Securement experience preferred.", tags: ["Full-time", "Home daily / weekly regional", "Class A"] },
-  { icon: "box", t: "CDL-B Box Truck Driver", s: "Same-day and multi-stop distribution routes on 26 ft liftgate trucks. Local Florida lanes.", tags: ["Full-time · Part-time", "Home daily", "Class B"] },
+  { icon: "box", t: "Box Truck Driver (non-CDL)", s: "Same-day and multi-stop distribution routes on 26 ft liftgate trucks. Local Florida lanes, home every night.", tags: ["Full-time · Part-time", "Home daily", "Standard license"] },
   { icon: "van", t: "Cargo Van Driver (non-CDL)", s: "Urgent small-freight runs in a company Sprinter van. Clean record and a customer-first attitude.", tags: ["Full-time · Part-time", "Home daily", "Standard license"] },
+  { icon: "flatbed", t: "Flatbed & Dry Van Driver (CDL required)", s: "Building materials on the flatbed, full truckloads in the 53 ft dry van. Florida and the Southeast. Securement experience preferred.", tags: ["Full-time", "Home daily / weekly regional", "CDL Class A"] },
 ] as const;
 
 const PERKS = ["Company-owned, maintained equipment", "Home daily on most Florida routes", "Weekly pay, direct deposit", "Planned routes before you leave the yard", "Direct line to the owner and dispatch", "Growing fleet, growing opportunity"];
@@ -30,7 +30,7 @@ export default function CareersPage() {
   return (
     <>
       <JsonLd data={[jobPostingSchema(), faqSchema(driverFaqs), breadcrumbSchema([{ name: "Careers", path: "/careers/" }])]} />
-      <PageHero eyebrow="Careers" title="Drive for a company that knows your name" sub="We are hiring CDL and non-CDL drivers across Florida. Company equipment, planned routes, home daily on most lanes, and an owner who still answers the phone." image="/images/truck-front.webp" imageAlt="Total Coverage Trucking truck ready for a driver" crumbs={[{ name: "Careers", path: "/careers/" }]}>
+      <PageHero eyebrow="Careers" title="Drive for a company that knows your name" sub="We are hiring non-CDL box truck and cargo van drivers, and CDL drivers for flatbed and dry van, across Florida. Company equipment, planned routes, home daily on most lanes, and an owner who still answers the phone." image="/images/truck-highway.webp" imageAlt="Total Coverage Trucking truck ready for a driver" crumbs={[{ name: "Careers", path: "/careers/" }]}>
         <Link href="#apply" className="btn-orange display-md px-7 py-4 text-lg">Apply online <Arrow className="h-5 w-5" /></Link>
         <PhoneLink location="careers_hero" className="btn-ghost display-md px-7 py-4 text-lg"><Phone className="h-5 w-5" /> Talk to us first</PhoneLink>
       </PageHero>
@@ -61,7 +61,7 @@ export default function CareersPage() {
             <p className="mt-4 text-white/75">Big carriers have big websites. We have a dispatcher who knows your route, equipment that gets maintained, and a schedule that gets you home.</p>
             <ul className="mt-8 grid gap-3 sm:grid-cols-2">{PERKS.map((p) => <li key={p} className="flex items-start gap-2 text-[15px]"><Check className="mt-0.5 h-4 w-4 shrink-0 text-orange-300" />{p}</li>)}</ul>
           </div>
-          <div className="reveal-right relative aspect-[16/11] overflow-hidden rounded-3xl shadow-[var(--shadow-lift)]"><Image src="/images/fleet-yard.webp" alt="Total Coverage Trucking fleet in the yard" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" /></div>
+          <div className="reveal-right relative aspect-[16/11] overflow-hidden rounded-3xl shadow-[var(--shadow-lift)]"><Image src="/images/box-truck-flatbed-highway.webp" alt="Total Coverage Trucking box truck and flatbed on the road" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" /></div>
         </Container>
       </section>
 

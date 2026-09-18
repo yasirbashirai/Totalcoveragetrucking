@@ -22,7 +22,7 @@ export type City = {
 export const cities: City[] = [
   {
     slug: "jacksonville", name: "Jacksonville", county: "Duval County", region: "Northeast Florida", zipPrefixes: ["320", "322"],
-    image: "/images/truck-highway.webp", imageAlt: "Semi truck moving freight on I-95 near Jacksonville",
+    image: "/images/box-truck-flatbed-highway.webp", imageAlt: "Box truck and flatbed moving freight on I-95 near Jacksonville",
     intro: "Jacksonville is Florida's largest city by land area and its busiest logistics gateway: JAXPORT, three interstates and rail service to the whole Southeast. We run cargo van, box truck and flatbed freight across Duval County and out along I-95, I-10 and I-295 every business day.",
     local: "Port drayage overflow, distribution-center replenishment on the Westside and Northside industrial corridors, and time-critical parts to the Southside business parks make up most of our Jacksonville work. With I-10 and I-95 meeting here, Jacksonville is also our staging point for next-day lanes into Georgia and the Carolinas.",
     industries: ["Port and warehouse distribution", "Manufacturing and aerospace parts", "Building materials and construction", "Medical and healthcare supply", "Retail replenishment"],
@@ -64,7 +64,7 @@ export const cities: City[] = [
   },
   {
     slug: "miami", name: "Miami", county: "Miami-Dade County", region: "South Florida", zipPrefixes: ["330", "331", "332"],
-    image: "/images/reefer-dock.webp", imageAlt: "Trucks at a Miami-Dade distribution warehouse",
+    image: "/images/box-trucks-dock.webp", imageAlt: "Box trucks at a Miami-Dade distribution warehouse",
     intro: "Miami-Dade is the densest freight market in Florida: PortMiami, MIA air cargo, the Doral and Medley warehouse districts and thousands of receivers with tight delivery windows. Our cargo vans and liftgate box trucks are built for exactly that.",
     local: "Traffic and dock congestion define Miami freight. We schedule early-window pickups in Doral, Medley and Hialeah, run direct to the receiver, and rely on cargo vans for the downtown, Brickell and Miami Beach deliveries where a 26 ft truck cannot park.",
     industries: ["Import and export distribution", "Air cargo recovery and delivery", "Fashion, retail and consumer goods", "Medical and pharmaceutical", "Hospitality and food service"],
@@ -92,7 +92,7 @@ export const cities: City[] = [
   },
   {
     slug: "west-palm-beach", name: "West Palm Beach", county: "Palm Beach County", region: "South Florida", zipPrefixes: ["334"],
-    image: "/images/reefer.webp", imageAlt: "Truck on the Florida Turnpike near West Palm Beach",
+    image: "/images/flatbed-lumber.webp", imageAlt: "Flatbed hauling building materials near West Palm Beach",
     intro: "Palm Beach County stretches from Boca Raton to Jupiter and west to Belle Glade. West Palm Beach is the northern anchor of the South Florida market and our jump-off point for lanes up the Treasure Coast to Fort Pierce and Vero Beach.",
     local: "Construction and landscaping materials to the county's constant building activity, distribution to Boca and Delray retail, and agricultural and packaging freight from the Glades keep our West Palm units moving. Flatbeds are in high demand here.",
     industries: ["Construction and landscaping supply", "Retail and luxury goods", "Agriculture and packaging", "Aviation and aerospace (Jupiter)", "Healthcare"],
@@ -120,7 +120,7 @@ export const cities: City[] = [
   },
   {
     slug: "tallahassee", name: "Tallahassee", county: "Leon County", region: "North Florida / Panhandle", zipPrefixes: ["323"],
-    image: "/images/truck-road.webp", imageAlt: "Truck on I-10 near Tallahassee",
+    image: "/images/box-truck-facility.webp", imageAlt: "Box truck delivering near Tallahassee",
     intro: "Tallahassee anchors the Panhandle on I-10, halfway between Jacksonville and Pensacola and a short run from Thomasville and Valdosta in Georgia. State government, two universities and a growing medical sector generate steady freight that national carriers often serve slowly.",
     local: "Office and IT equipment for state agencies, university and hospital supply, and building materials out to Crawfordville, Quincy and Monticello are typical Tallahassee loads. I-10 gives us same-day reach to Panama City and Pensacola and next-day lanes into South Georgia and Alabama.",
     industries: ["Government and institutional", "Higher education", "Healthcare", "Construction", "Agriculture and forestry products"],
